@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SwapiService from '../../services/swapi-service';
 import ErrorButton from '../error-button/error-button';
 
-import './person-details.css';
+import './item-details.css';
 
 export default class PersonDetails extends Component {
 
@@ -17,20 +17,20 @@ export default class PersonDetails extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.personId !== prevProps.personId) {
+    if (this.props.itemId !== prevProps.itemId) {
       this.updatePerson();
     }
   }
 
   updatePerson() {
-    const { personId } = this.props;
-    if (!personId) {
+    const { itemId, getData } = this.props;
+    if (!itemId) {
       return;
     }
 
-    this.swapiService.getPerson(personId)
-    .then((person) => {
-      this.setState({ person })
+    getData(itemId)
+    .then((item) => {
+      this.setState({ item })
     })
   }
 
@@ -46,8 +46,8 @@ export default class PersonDetails extends Component {
     } = person;
 
     return (
-      <div className="person-details card">
-        <img className="person-image"
+      <div className="item-details card">
+        <img className="item-image"
           src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt='character'/>
 
         <div className="card-body">
