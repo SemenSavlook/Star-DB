@@ -23,3 +23,8 @@
     margin-top: 1rem;
   }
 }
+
+.list-group-flush>.list-group-item:last-child {
+  border-bottom-width: 1px;
+  margin-bottom: 1rem;
+}
