@@ -21,5 +21,3 @@ const mapMethodsToProps = (swapiService) => {
 }
 
 export default withSwapiService(mapMethodsToProps)(PersonDetails);
-
-///8-18
