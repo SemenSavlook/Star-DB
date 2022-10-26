@@ -1,3 +1,3 @@
 # My Pet react project
 
-### Open [https://semensavlook.github.io/Star-DB/out/]
+### Build: https://semensavlook.github.io/Star-DB/out/
